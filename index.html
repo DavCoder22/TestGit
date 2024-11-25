@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo</title>
+    <!-- Incluir Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: '8bit';
+            src: url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap') format('truetype');
+        }
+        .blink {
+            animation: blink-animation 1s steps(5, end) infinite;
+        }
+        @keyframes blink-animation {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .hola-mundo {
+            font-family: '8bit', sans-serif;
+            font-size: 3rem;
+            color: #00FF00;
+            text-shadow: 2px 2px 4px #000000;
+        }
+    </style>
+</head>
+<body class="bg-dark text-center">
+    <div class="container">
+        <h1 class="hola-mundo blink mt-5">Hola Mundo</h1>
+    </div>
+    <!-- Incluir Bootstrap
