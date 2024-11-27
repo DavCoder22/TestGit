@@ -21,7 +21,7 @@ jobs:
       - name: Deploy to EC2
         run: |
           ssh -o StrictHostKeyChecking=no ec2-user@35.174.168.48<< 'EOF'
-            cd /home/ec2-user/GitTest
+            cd /home/ec2-user/TestGit
             git pull origin main
             sudo systemctl restart httpd
           EOF
