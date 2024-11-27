@@ -1,26 +1,26 @@
 name: Deploy to EC2
- 
+
 on:
   push:
     branches:
       - main
- 
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
- 
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
- 
+
       - name: Set up SSH key
         uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.DavidPCkey }}
- 
+
       - name: Deploy to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no ec2-user@${{ secrets.DavidPCKeyIP }}<< 'EOF'
+          ssh -o StrictHostKeyChecking=no ec2-user@${{ secrets.DavidPCKeyIP }} << 'EOF'
             cd /home/ec2-user/TestGit
             git pull origin main
             sudo systemctl restart httpd
